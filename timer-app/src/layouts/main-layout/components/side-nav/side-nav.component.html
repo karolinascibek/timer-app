@@ -1,0 +1,10 @@
+<app-nav-link
+  *ngFor="let link of navLinks"
+  [navLink]="link"
+  [isWrap]="isWrap"
+  (click)="selectTab(link)"
+></app-nav-link>
+<button class="wrapBtn" (click)="wrapSideNav()">
+  <mat-icon *ngIf="isWrap" fontIcon="keyboard_double_arrow_right"></mat-icon>
+  <mat-icon *ngIf="!isWrap" fontIcon="keyboard_double_arrow_left"></mat-icon>
+</button>

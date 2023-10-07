@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  div {
+    display: flex;
+    align-items: center;
+
+    &.time {
+      margin-right: 1rem;
+    }
+
+    mat-icon {
+      margin-right: 0.5rem;
+    }
+  }
+}

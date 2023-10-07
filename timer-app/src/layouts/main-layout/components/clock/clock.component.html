@@ -1,0 +1,17 @@
+<div class="time">
+  <mat-icon
+    aria-hidden="false"
+    aria-label="Example home icon"
+    fontIcon="schedule"
+  ></mat-icon>
+  {{ date | date : "HH:mm:ss" }}
+</div>
+
+<div class="date">
+  <mat-icon
+    aria-hidden="false"
+    aria-label="Example home icon"
+    fontIcon="today"
+  ></mat-icon>
+  {{ date | date : "dd.MM.yyyy" }}
+</div>

@@ -1,0 +1,38 @@
+:host {
+  a {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: white;
+    margin-bottom: 0.3rem;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      background-color: rgba(44, 31, 219, 0.287);
+    }
+
+    &.active {
+      color: rgba(44, 31, 219, 0.831);
+      background-color: rgb(255, 255, 255);
+
+    }
+
+    &.no-wrap {
+      display: flex;
+      justify-content: flex-start;
+
+      .link-name {
+        padding-left: 0.3rem;
+        padding-right: 0.5rem;
+        font-size: 0.8rem;
+      }
+
+
+    }
+
+  }
+}

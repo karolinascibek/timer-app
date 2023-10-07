@@ -1,0 +1,27 @@
+:host {
+  background: rgb(107, 107, 177);
+  // border-radius: 0.7rem;
+  padding: var(--padding-sm);
+
+  display: flex;
+  flex-direction: column;
+
+  .wrapBtn {
+    margin-top: auto;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.456);
+    border: none;
+    border-radius: 0.2rem;
+    padding-inline: 0;
+    padding-block: 0;
+    padding: 0.2rem;
+    display: block;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.456);
+      color: white;
+      cursor: pointer;
+    }
+  }
+
+}
