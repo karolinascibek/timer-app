@@ -4,11 +4,17 @@ import { RouterModule, Routes } from '@angular/router';
 const appRoutes: Routes = [
   {
     path: '',
-    loadChildren:()=>import('../layouts/main-layout/main-layout.module').then(m=>m.MainLayoutModule),  },
+    loadChildren: () => import('../layouts/welcome-layout/welcome-layout.module').then(m => m.WelcomeLayoutModule),
+  },
+
+  {
+    path: 'dashboard',
+    loadChildren: () => import('../layouts/main-layout/main-layout.module').then(m => m.MainLayoutModule),
+  },
 ];
 
 @NgModule({
-  imports:[
+  imports: [
     RouterModule.forRoot(appRoutes),
   ],
   exports: [RouterModule]

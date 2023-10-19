@@ -4,7 +4,7 @@
   [isWrap]="isWrap"
   (click)="selectTab(link)"
 ></app-nav-link>
-<button class="wrapBtn" (click)="wrapSideNav()">
+<div class="wrapBtn" color="accent" (click)="wrapSideNav()">
   <mat-icon *ngIf="isWrap" fontIcon="keyboard_double_arrow_right"></mat-icon>
   <mat-icon *ngIf="!isWrap" fontIcon="keyboard_double_arrow_left"></mat-icon>
-</button>
+</div>

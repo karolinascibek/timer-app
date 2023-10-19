@@ -10,13 +10,13 @@ export class SideNavComponent implements OnInit {
 
   navLinks: NavLink[] = [
     { icon: 'settings', path: 'settings', name: "Ustawienia", isSelected: false },
-    { icon: 'add', path: '', name: "Plan", isSelected: false },
+    { icon: 'add', path: 'dashboard', name: "Plan", isSelected: false },
   ];
 
 
   selectedTab!: NavLink;
 
-  isWrap: boolean = false;
+  isWrap: boolean = true;
 
   ngOnInit(): void {
     this.selectedTab = this.navLinks[1];

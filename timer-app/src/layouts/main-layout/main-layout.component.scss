@@ -6,6 +6,7 @@
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr auto;
     gap: var(--margin-md);
+    box-sizing: border-box;
 
     app-side-nav {
       grid-column: 1;
@@ -13,7 +14,7 @@
       box-sizing: border-box;
     }
 
-    app-header {
+    app-nav-bar {
       grid-column: 2;
       margin-right: var(--margin-md);
     }

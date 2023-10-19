@@ -2,20 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainLayoutComponent } from './main-layout.component';
 import { MainLayoutRoutingModule } from './main-layout-routing.module';
-import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContentComponent } from './components/content/content.component';
 import { ClockComponent } from './components/clock/clock.component';
 import { MatIconModule } from '@angular/material/icon';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { NavLinkComponent } from './components/side-nav/components/nav-link/nav-link.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 
 @NgModule({
   declarations: [
     MainLayoutComponent,
-    HeaderComponent,
+    NavBarComponent,
     FooterComponent,
     ContentComponent,
     ClockComponent,
@@ -25,7 +27,9 @@ import { NavLinkComponent } from './components/side-nav/components/nav-link/nav-
   imports: [
     CommonModule,
     MainLayoutRoutingModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule,
+    MatDividerModule,
   ]
 })
 export class MainLayoutModule { }
