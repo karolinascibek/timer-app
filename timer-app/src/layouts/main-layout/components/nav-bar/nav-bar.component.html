@@ -1,4 +1,5 @@
 <app-clock></app-clock>
-<button mat-icon-button color="accent" [routerLink]="'/'">
-  <mat-icon>close</mat-icon>
+<button mat-icon-button color="accent" (click)="logout()">
+  <!-- <mat-icon>close</mat-icon> -->
+  <app-icon [icon]="'close'" [ngClass]="'accent'"></app-icon>
 </button>

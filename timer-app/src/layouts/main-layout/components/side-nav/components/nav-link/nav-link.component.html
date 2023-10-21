@@ -1,8 +1,10 @@
 <a class="nav-link" routerLink="{{navLink.path}}" [ngClass]="{'no-wrap': !isWrap, 'wrap': isWrap, 'active': navLink.isSelected }">
-  <mat-icon
+  <!-- <mat-icon
     aria-hidden="false"
     aria-label="Example home icon"
     fontIcon="{{ navLink.icon }}"
-  ></mat-icon>
+  ></mat-icon> -->
+
+  <app-icon [icon]="navLink.icon" [ngClass]="{'purple': !navLink.isSelected,  'white': navLink.isSelected }"></app-icon>
   <div class="link-name" *ngIf="!isWrap">{{ navLink.name }}</div>
 </a>

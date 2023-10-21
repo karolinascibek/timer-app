@@ -1,5 +1,7 @@
-<button mat-raised-button color="accent" [routerLink]="['/dashboard']">Start app</button>
+<button mat-raised-button color="accent"  (click)="goToApp()">Start app</button>
 
 <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
-  <mat-icon>menu</mat-icon>
+  <!-- <mat-icon>menu</mat-icon> -->
+  <!-- <app-icon [icon]="'menu'"></app-icon> -->
+  <app-icon [icon]="'menu'" [ngClass]="'accent'"></app-icon>
 </button>

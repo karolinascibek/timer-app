@@ -5,6 +5,8 @@
   (click)="selectTab(link)"
 ></app-nav-link>
 <div class="wrapBtn" color="accent" (click)="wrapSideNav()">
-  <mat-icon *ngIf="isWrap" fontIcon="keyboard_double_arrow_right"></mat-icon>
-  <mat-icon *ngIf="!isWrap" fontIcon="keyboard_double_arrow_left"></mat-icon>
+  <!-- <mat-icon *ngIf="isWrap" fontIcon="keyboard_double_arrow_right"></mat-icon>
+  <mat-icon *ngIf="!isWrap" fontIcon="keyboard_double_arrow_left"></mat-icon> -->
+  <app-icon *ngIf="!isWrap"  [icon]="'double-arrow-left'" [ngClass]="'white'"></app-icon>
+  <app-icon *ngIf="isWrap" [icon]="'double-arrow-right'" [ngClass]="'white'"></app-icon>
 </div>

@@ -7,6 +7,7 @@ import { WelcomeLayoutComponent } from './welcome-layout.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
+import { IconModule } from 'src/share/icon/icon.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MatButtonModule } from '@angular/material/button';
     WelcomeLayoutRoutingModule,
     MatButtonModule,
     MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    IconModule
   ]
 })
 export class WelcomeLayoutModule { }

@@ -1,13 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainLayoutComponent } from './main-layout.component';
+import { DashboardComponent } from 'src/modules/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
     path: '',
     component: MainLayoutComponent,
-    children:[
-      // {path: '', loadChildren:}
+    children: [
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
+      },
+      {
+        path: 'dashboard',
+        loadChildren: () => import('../../modules/dashboard/dashboard.module').then(m => m.DashboardModule)
+      },
+      {
+        path: 'settings',
+        loadChildren: () => import('../../modules/settings/settings.module').then(m => m.SettingsModule)
+      },
+      {
+        path: 'timer',
+        loadChildren: () => import('../../modules/timer/timer.module').then(m => m.TimerModule)
+      }
     ]
   }
 ];

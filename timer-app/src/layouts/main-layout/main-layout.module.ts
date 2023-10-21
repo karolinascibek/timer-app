@@ -11,6 +11,8 @@ import { NavLinkComponent } from './components/side-nav/components/nav-link/nav-
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { IconModule } from 'src/share/icon/icon.module';
+
 
 
 
@@ -30,6 +32,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatIconModule,
     MatButtonModule,
     MatDividerModule,
+    IconModule
   ]
 })
 export class MainLayoutModule { }

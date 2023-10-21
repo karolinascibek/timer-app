@@ -1,19 +1,21 @@
 <div class="time">
-  <mat-icon
+  <!-- <mat-icon
     color="accent"
     aria-hidden="false"
     aria-label="Example home icon"
     fontIcon="schedule"
-  ></mat-icon>
+  ></mat-icon> -->
+  <app-icon [icon]="'clock'" [ngClass]="'accent'"></app-icon>
   {{ date | date : "HH:mm:ss" }}
 </div>
 
 <div class="date">
-  <mat-icon
+  <!-- <mat-icon
     color="accent"
     aria-hidden="false"
     aria-label="Example home icon"
     fontIcon="today"
-  ></mat-icon>
+  ></mat-icon> -->
+  <app-icon [icon]="'today'" [ngClass]="'accent'"></app-icon>
   {{ date | date : "dd.MM.yyyy" }}
 </div>

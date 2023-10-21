@@ -9,8 +9,9 @@ import { NavLink } from './models/nav-link.model';
 export class SideNavComponent implements OnInit {
 
   navLinks: NavLink[] = [
+    { icon: 'home', path: 'dashboard', name: "Dashboard", isSelected: true },
     { icon: 'settings', path: 'settings', name: "Ustawienia", isSelected: false },
-    { icon: 'add', path: 'dashboard', name: "Plan", isSelected: false },
+    { icon: 'add', path: 'timer', name: "Planer", isSelected: false },
   ];
 
 
@@ -19,8 +20,7 @@ export class SideNavComponent implements OnInit {
   isWrap: boolean = true;
 
   ngOnInit(): void {
-    this.selectedTab = this.navLinks[1];
-    this.selectedTab.isSelected = true;
+    this.selectedTab = this.navLinks[0];
   }
 
   selectTab(tab: NavLink): void {
