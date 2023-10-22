@@ -1,0 +1,27 @@
+:host {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(2, 2, 2, 0.623);
+
+
+  .dialog-container {
+    padding: var(--padding-lg);
+    border-radius: var(--border-radious-md);
+    background-color: white;
+
+    .header {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

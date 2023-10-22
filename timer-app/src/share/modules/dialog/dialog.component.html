@@ -1,0 +1,11 @@
+
+<div class="dialog-container">
+
+  <section class="header">
+    <button mat-icon-button color="accent" (click)="close()">
+      <!-- <mat-icon>close</mat-icon> -->
+      <app-icon [icon]="'close'" [ngClass]="'accent'"></app-icon>
+    </button>
+  </section>
+  <section appViewContainerRef class="content"></section>
+</div>

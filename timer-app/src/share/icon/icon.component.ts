@@ -37,7 +37,6 @@ export class IconComponent implements OnInit{
 
 
   ngOnInit(): void {
-      console.log({v: this.iconRef})
       this.loadComponent();
   }
 

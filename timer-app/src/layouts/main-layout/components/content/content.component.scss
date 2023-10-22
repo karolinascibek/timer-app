@@ -1,6 +1,6 @@
 :host {
   background: rgb(107, 107, 177);
-  border-radius: 0.7rem;
+  border-radius: var(--border-radious-md);
   padding: var(--padding-sm);
 
 }
