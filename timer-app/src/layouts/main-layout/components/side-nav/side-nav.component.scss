@@ -1,5 +1,5 @@
 :host {
-  background: rgba(0, 0, 0, .12);
+  background: var(--light-black-transparent);
   padding: var(--padding-sm);
 
   display: flex;
@@ -9,7 +9,7 @@
     margin-top: auto;
     margin: auto auto 0 auto;
     background-color: transparent;
-    color: rgba(255, 255, 255, 0.456);
+    color: var(--color-gray-light-transparent);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,7 @@
     }
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.456);
+      background-color: var(--color-gray-light-transparent);
       color: var(--color-purple);
       cursor: pointer;
     }

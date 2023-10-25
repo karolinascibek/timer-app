@@ -1,5 +1,6 @@
 :host {
-  background: rgb(107, 107, 177);
+  // background: rgb(107, 107, 177);
+  background: var(--light-black-transparent);
   border-radius: var(--border-radious-md);
   padding: var(--padding-sm);
 

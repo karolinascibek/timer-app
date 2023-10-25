@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  .input-item {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+
+    &:nth-child(n) {
+      margin-right: 0.5rem;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

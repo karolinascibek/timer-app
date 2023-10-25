@@ -15,7 +15,15 @@ export class DialogComponent<T = unknown > implements OnInit, AfterViewInit{
 
   @ViewChild(ViewContainerRefDirective, {static: true}) viewContainerRefDirective!: ViewContainerRefDirective;
 
-  componentType!: Type<T>;
+  private _componentType!: Type<T>;
+
+  set componentType(type: Type<T>) {
+    this._componentType = type;
+  }
+
+  get componentType(): Type<T> {
+    return this._componentType;
+  }
 
 
   ngOnInit(): void {
