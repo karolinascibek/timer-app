@@ -1,6 +1,7 @@
 import { ViewContainerRefDirective } from './../../directives/view-container-ref.directive';
-import { AfterViewInit, Component, OnInit, Type, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, Type, ViewChild, ComponentRef, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
 import { Subject, Observable, Subscription } from 'rxjs';
+import { DialogService } from './services/dialog.service';
 
 @Component({
   selector: 'app-dialog',
@@ -8,38 +9,65 @@ import { Subject, Observable, Subscription } from 'rxjs';
   styleUrls: ['./dialog.component.scss'],
 
 })
-export class DialogComponent<T = unknown > implements OnInit, AfterViewInit{
+export class DialogComponent implements OnInit, AfterViewInit, OnDestroy{
 
-  private closeSubject: Subject<boolean> = new Subject();
-  public closeSubject$: Observable<boolean> = this.closeSubject.asObservable();
+  private componentRef!: ComponentRef<unknown>;
+  private subscriptionOpenDialog!: Subscription;
+
+  @Input() header: string = '';
 
   @ViewChild(ViewContainerRefDirective, {static: true}) viewContainerRefDirective!: ViewContainerRefDirective;
 
-  private _componentType!: Type<T>;
-
-  set componentType(type: Type<T>) {
-    this._componentType = type;
-  }
-
-  get componentType(): Type<T> {
-    return this._componentType;
-  }
-
+  constructor( private readonly dialogService: DialogService) {}
 
   ngOnInit(): void {
-    console.log({onInitbtn: false})
-    this.closeSubject.next(false);
+
+    this.subscriptionOpenDialog = this.dialogService.openEvent$.subscribe({
+      next: (isOpen) =>{
+        if(isOpen) this.createComponent();
+        else this.closeDialog();
+      },
+      error: () =>{}
+    });
   }
 
-  ngAfterViewInit(): void {
-    const viewContainerRef = this.viewContainerRefDirective.viewContainerRef;
-    console.log({dv: this.componentType, viewContainerRef})
+  ngAfterViewInit(): void {}
 
-    viewContainerRef.createComponent(this.componentType);
+  save() {
+    console.log({msg: 'clicked save'})
+    this.dialogService.save = true;
+  }
+
+  delete() {
+    console.log({msg: 'clicked delete'})
+    this.dialogService.delete = true;
+  }
+
+  cancel() {
+    this.close();
+  }
+
+  createComponent(): ComponentRef<unknown> {
+    return  this.viewContainerRefDirective.viewContainerRef.createComponent(this.dialogService.componentType);
+  }
+
+  closeDialog(): void {
+    if(this.componentRef) {
+      this.componentRef.destroy();
+    }
+
+    if(this.subscriptionOpenDialog) {
+      this.subscriptionOpenDialog.unsubscribe();
+    }
   }
 
   close(): void {
     this.viewContainerRefDirective.viewContainerRef.clear();
-    this.closeSubject.next(true);
+    this.dialogService.open = false;
+  }
+
+  ngOnDestroy(): void {
+    console.log({m: 'destroj dialog'});
+    this.subscriptionOpenDialog.unsubscribe();
   }
 }

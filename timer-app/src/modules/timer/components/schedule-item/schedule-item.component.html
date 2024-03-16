@@ -1,25 +1,31 @@
 <div class="app-form-group-row app-input-date-time">
   <app-input-time
-    [time]="{ hour: 12, minutes: 12 }"
+    [dateTime]="schedule.dateStart"
     [label]="'Od'"
   ></app-input-time>
   <app-input-time
-    [time]="{ hour: 14, minutes: 13 }"
+    [dateTime]="schedule.dateStop"
     [label]="'Do'"
   ></app-input-time>
+
+  <div class="app-form-item duration">
+    <label class="app-label purple" for="">Czas trwania [min.]</label>
+    <input class="app-input app-input-sm" type="number" disabled [value]="durration">
+  </div>
+</div>
+
+
+<div class="app-form-item">
+  <label class="app-label purple" for="">Tytuł</label>
+  <input class="app-input" type="text" [value]="schedule.title">
 </div>
 
 <div class="app-form-item">
-  <label class="app-label" for="">Tytuł</label>
-  <input class="app-input" type="text">
-</div>
-
-<div class="app-form-item">
-  <label class="app-label" for="">Opis</label>
-  <textarea class="app-texarea" name="" id="" cols="30" rows="10"></textarea>
+  <label class="app-label purple" for="">Opis</label>
+  <textarea class="app-textarea" name="" id="" cols="20" rows="10" [value]="schedule.description"></textarea>
 </div>
 
 <div class="app-input-checkbox">
-  <input type="checkbox" class="app-input">
-  <label class="app-label" for="">Zakończony ?</label>
+  <input type="checkbox" class="app-input" [value]="schedule.isCompleted">
+  <label class="app-label purple" for="">Zakończony ?</label>
 </div>

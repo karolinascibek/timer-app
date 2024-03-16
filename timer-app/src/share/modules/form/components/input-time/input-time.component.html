@@ -1,9 +1,30 @@
-<div class="input-item">
+<!-- <div class="input-item">
   <label class="app-label" for="timeTo">{{label}}</label>
-  <input class="app-input app-input-sm" type="number" [(ngModel)]="time.hour" name="hourTo">
+  <input class="app-input app-input-sm" type="number" [(ngModel)]="hour" name="hourTo" (ngModelChange)="handleTime()">
 </div>
-
+<span>:</span>
 <div class="input-item">
   <label class="app-label" for="minutesTo"></label>
-  <input class="app-input app-input-sm" type="number" [(ngModel)]="time.minutes"  name="minutesTo">
+  <input class="app-input app-input-sm" type="number" [(ngModel)]="minutes"  name="minutesTo" (ngModelChange)="handleTime()">
+</div> -->
+
+<label class="app-label" for="timeTo">{{label}}</label>
+<div class="input-item">
+
+  <div class="options">
+    <div>
+      <app-icon [icon]="'arrow-up'" [ngClass]="'accent'" (click)="increaseHour()"></app-icon>
+      <input type="number" class="app-input" [(ngModel)]="hour" >
+      <app-icon [icon]="'arrow-down'" [ngClass]="'accent'" (click)="decreaseHour()"></app-icon>
+    </div>
+    <span>:</span>
+    <div>
+      <app-icon [icon]="'arrow-up'" [ngClass]="'accent'" (click)="increaseMinutes()"></app-icon>
+      <input type="number" class="app-input" [(ngModel)]="minutes" >
+      <app-icon [icon]="'arrow-down'" [ngClass]="'accent'" (click)="decreaseMinutes()"></app-icon>
+    </div>
+  </div>
+  <!-- <input appInputMask [mask]="'__:__'" [inputPattern]="'_'" class="app-input input-minutes" type="text" readonly [(ngModel)]="time" (ngModelChange)="handleTime()">> -->
+  <input class="app-input input-minutes" type="text" readonly [(ngModel)]="time" (click)="showOptions()">>
 </div>
+

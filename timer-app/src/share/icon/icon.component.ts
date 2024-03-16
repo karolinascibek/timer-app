@@ -10,6 +10,8 @@ import { IconCalendarTodayComponent } from './components/icon-calendar-today/ico
 import { IconDoubleArrowRightComponent } from './components/icon-double-arrow-right/icon-double-arrow-right.component';
 import { IconDoubleArrowLeftComponent } from './components/icon-double-arrow-left/icon-double-arrow-left.component';
 import { IconMenuComponent } from './components/icon-menu/icon-menu.component';
+import { IconArrowDownComponent } from './components/icon-arraw-down/icon-arrow-down.component';
+import { IconArrowUpComponent } from './components/icon-arraw-up/icon-arrow-up.component';
 
 @Component({
   selector: 'app-icon',
@@ -31,6 +33,8 @@ export class IconComponent implements OnInit{
     'double-arrow-right': {component: IconDoubleArrowRightComponent},
     'double-arrow-left': {component: IconDoubleArrowLeftComponent},
     'menu': {component: IconMenuComponent},
+    'arrow-down': {component: IconArrowDownComponent},
+    'arrow-up': {component: IconArrowUpComponent},
   }
 
   @Input() className: string = 'classic';

@@ -4,12 +4,12 @@
 .app-form-item {
   display: flex;
   flex-direction: column;
-  align-self: flex-end;
-
+  align-self: flex-start;
+  width: 100%;
 }
 
 .app-label {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   font-weight: 500;
   color: rgb(81, 81, 81);
@@ -22,9 +22,16 @@
 
 .app-form-group-row {
   display: flex;
+  flex-wrap: wrap;
+
+
+  .app-form-item{
+    width: auto;
+  }
 
   >:nth-child(n) {
-    margin-right: 2rem;
+    margin-right: 1rem;
+    flex-grow: 1;
   }
 
   >:last-child {
@@ -34,19 +41,21 @@
 }
 
 .app-input-sm {
-  width: 50px;
+  // width: 50px;
 }
 
 .app-input, .app-textarea {
   border: none;
-  border: 1px solid rgba(101, 101, 101, 0.62);
-  border-radius: 3px;
-  padding: 0.5rem;
+  border: 1px solid var(--form-border-input);
+  border-radius: var(--form-border-radious);
+  padding: var(--form-padding-input);
+  font-family: var(--font-family);
 
   &:focus {
     outline-color: rgba(97, 97, 183, 0.62);
   }
 }
+
 
 .app-input-checkbox {
   display: flex;

@@ -12,6 +12,8 @@ import { IconComponent } from './icon.component';
 import { ViewContainerRefDirective } from '../directives/view-container-ref.directive';
 import { IconDoubleArrowRightComponent } from './components/icon-double-arrow-right/icon-double-arrow-right.component';
 import { IconDoubleArrowLeftComponent } from './components/icon-double-arrow-left/icon-double-arrow-left.component';
+import { IconArrowDownComponent } from './components/icon-arraw-down/icon-arrow-down.component';
+import { IconArrowUpComponent } from './components/icon-arraw-up/icon-arrow-up.component';
 
 
 
@@ -28,6 +30,8 @@ import { IconDoubleArrowLeftComponent } from './components/icon-double-arrow-lef
     IconComponent,
     IconDoubleArrowRightComponent,
     IconDoubleArrowLeftComponent,
+    IconArrowDownComponent,
+    IconArrowUpComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +46,7 @@ import { IconDoubleArrowLeftComponent } from './components/icon-double-arrow-lef
     IconSettingsComponent,
     IconMenuComponent,
     IconAddComponent,
-    IconComponent
+    IconComponent,
   ]
 })
 export class IconModule { }

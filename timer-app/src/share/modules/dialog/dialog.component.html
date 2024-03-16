@@ -2,10 +2,20 @@
 <div class="dialog-container">
 
   <section class="header">
+    <span>{{header}}</span>
     <button mat-icon-button color="accent" (click)="close()">
       <!-- <mat-icon>close</mat-icon> -->
       <app-icon [icon]="'close'" [ngClass]="'accent'"></app-icon>
     </button>
   </section>
   <section appViewContainerRef class="content"></section>
+  <section class="btns">
+    <div class="btns-left">
+      <button mat-raised-button color="warn" (click)="delete()">Usuń</button>
+    </div>
+    <div class="btns-right">
+      <button mat-raised-button (click)="cancel()">Anuluj</button>
+      <button mat-raised-button color="primary" (click)="save()">Zapisz</button>
+    </div>
+  </section>
 </div>

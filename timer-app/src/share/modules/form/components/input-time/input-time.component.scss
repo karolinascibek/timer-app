@@ -1,17 +1,109 @@
 :host {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+
+  section.input-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid var(--form-border-input);
+    border-radius: var(--form-border-radious);
+    font-size: 1rem;
+
+
+    &:focus {
+      outline: 2px solid rgba(97, 97, 183, 0.62);
+    }
+
+  }
+  .options {
+    position: absolute;
+    top: -215%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.2rem;
+    padding: 5%;
+    border: 1px solid rgba(100, 100, 100, 0.5);
+    box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.5);
+
+    display: flex;
+    justify-content: center;
+
+    span {
+      margin: auto 0;
+    }
+
+    app-icon:hover{
+      background-color: rgb(242, 242, 242);
+      border-radius: 50%;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      input {
+        background-color: rgb(242, 242, 242);
+        text-align: center;
+        border: none;
+        margin: 0.3rem 0;
+        width: 40%;
+        padding: 0.6rem;
+      }
+    }
+
+  }
+
   .input-item {
+    position: relative;
+    border-radius: inherit;
     display: flex;
     flex-direction: column;
-    align-self: flex-end;
+    // align-self: flex-end;
+    // width: 7rem;
+
 
     &:nth-child(n) {
-      margin-right: 0.5rem;
+      // margin-right: 0.5rem;
     }
 
     &:last-child {
       margin-right: 0;
     }
+
+  }
+
+  span {
+    padding: 0 0.2rem;
+    font-size: 0.9rem;
+  }
+
+  input {
+    // border-radius: inherit;
+    // border: none;
+    // padding-left: 0;
+    // padding-right: 0;
+    width: inherit;
+    // outline: none;
+
+    &.input-hour {
+      text-align: end;
+    }
+
+    &.input-minutes {}
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
   }
 }
